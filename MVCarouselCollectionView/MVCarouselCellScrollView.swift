@@ -63,7 +63,7 @@ class MVCarouselCellScrollView: UIScrollView, UIScrollViewDelegate {
         }
         
         // Stack overflow people suggest this, not sure if it applies to us
-        self.imageView.contentMode = UIViewContentMode.Center
+        self.imageView.contentMode = UIView.ContentMode.Center
         if cellSize.width > imageSize.width && cellSize.height > imageSize.height {
             self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
         }
@@ -86,7 +86,7 @@ class MVCarouselCellScrollView: UIScrollView, UIScrollViewDelegate {
         let adjustedContentHeight = cellSize.width / imageAspectRatio
         let vertContentInset = !cellAspectRatioWiderThanImage ? 0.5 * (cellSize.height - adjustedContentHeight) : 0.0
     
-        self.contentInset = UIEdgeInsetsMake(vertContentInset, horzContentInset, vertContentInset, horzContentInset)
+        self.contentInset = UIEdgeInsets.init(top: vertContentInset, left: horzContentInset, bottom: vertContentInset, right: horzContentInset)
     }
     
     func zoomToUse() -> Double {
